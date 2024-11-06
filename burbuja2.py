@@ -1,21 +1,23 @@
-def burbuja_cadenas(lista):
-    n = len(lista)
+def bubble_sort(arr):
+    n = len(arr)
     for i in range(n):
-        intercambiado = False
-        print(f"Iteración {i+1}: Lista actual: {lista}")
+        swapped = False
+        print(f"Iteración {i+1}: {arr}")  
         for j in range(0, n-i-1):
-            print(f"  Comparando {lista[j]} con {lista[j+1]}")
-            if lista[j] > lista[j+1]:
-                lista[j], lista[j+1] = lista[j+1], lista[j]
-                intercambiado = True
-                print(f"  Intercambiando {lista[j+1]} con {lista[j]}: {lista}")
-        if not intercambiado:
-            print("  No hubo intercambios, lista ya ordenada. Terminando...")
+            print(f"  Comparando '{arr[j]}' con '{arr[j+1]}'")
+            if len(arr[j]) > len(arr[j+1]):  
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swapped = True
+                print(f"    Intercambiado: {arr}") 
+        if not swapped:
+            print(f"  No se realizaron intercambios, el arreglo está ordenado.")
             break
-    return lista
+    return arr
 
-nombres = ["Carlos", "Ana", "Maria", "José", "Pedro"]
-print("Lista antes de ordenar:", nombres)
-burbuja_cadenas(nombres)
-print("Lista después de ordenar:", nombres)
+
+cadenas = ["manzana", "kiwi", "banana", "cereza", "uva", "pera"]
+print("Lista original:", cadenas)
+cadenas_ordenadas = bubble_sort(cadenas)
+print("Lista ordenada por longitud:", cadenas_ordenadas)
+
 
