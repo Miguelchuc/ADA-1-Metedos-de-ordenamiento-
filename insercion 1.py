@@ -1,22 +1,31 @@
-def insercion(lista):
-    for i in range(1, len(lista)):
-        clave = lista[i]  
+def insertion_sort(arr, key):
+    o
+    for i in range(1, len(arr)):
+       
+        current_dict = arr[i]
+       
         j = i - 1
-        
-        print(f"Iteración {i}: Clave = {clave}, Lista antes de insertar: {lista}")  
-    
-        while j >= 0 and lista[j] > clave:
-            print(f"  Moviendo {lista[j]} hacia la derecha porque es mayor que {clave}")  
-            lista[j + 1] = lista[j]
+        while j >= 0 and arr[j][key] > current_dict[key]:  
+            arr[j + 1] = arr[j]  
             j -= 1
         
-        lista[j + 1] = clave  
-        print(f"  Después de insertar la clave: {lista}\n") 
+      
+        arr[j + 1] = current_dict
+        
+  
+        print(f"Iteración {i}: {arr}")
     
-    return lista
+    return arr
 
-numeros = [64, 34, 25, 12, 22, 11, 90]
-print("Lista antes de ordenar:", numeros)
-insercion(numeros)
-print("Lista después de ordenar:", numeros)
+personas = [
+    {"nombre": "Carlos", "edad": 25},
+    {"nombre": "Ana", "edad": 30},
+    {"nombre": "Luis", "edad": 22},
+    {"nombre": "Marta", "edad": 27},
+    {"nombre": "Pedro", "edad": 19}
+]
+
+print("Lista original:", personas)
+personas_ordenadas = insertion_sort(personas, "edad")
+print("Lista ordenada por edad:", personas_ordenadas)
 
