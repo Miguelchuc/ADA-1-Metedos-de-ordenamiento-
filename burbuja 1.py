@@ -14,7 +14,7 @@ def burbuja(lista):
             break
     return lista
 
-numeros = [64, 34, 25, 12, 22, 11, 90]
+numeros = [64, 34, 25, 12,]
 print("Lista antes de ordenar:", numeros)
 burbuja(numeros)
 print("Lista después de ordenar:", numeros)
