@@ -1,24 +1,27 @@
-def insercion_cadenas(lista):
-    for i in range(1, len(lista)):
-        clave = lista[i]
+def insertion_sort(arr):
+   
+    for i in range(1, len(arr)):
+        
+        current_tuple = arr[i]
+        
+      
         j = i - 1
-        
-        print(f"Iteración {i}: Clave = {clave}, Lista antes de insertar: {lista}")  
-        
-        while j >= 0 and lista[j] > clave:
-            print(f"  Moviendo {lista[j]} hacia la derecha porque es mayor que {clave}")  
-            lista[j + 1] = lista[j]
+        while j >= 0 and arr[j][1] > current_tuple[1]:  
+            arr[j + 1] = arr[j] 
             j -= 1
         
-        lista[j + 1] = clave
-        print(f"  Después de insertar la clave: {lista}\n")  
+     
+        arr[j + 1] = current_tuple
+        
+      
+        print(f"Iteración {i}: {arr}")
     
-    return lista
+    return arr
 
 
-nombres = ["Carlos", "Ana", "Maria", "José", "Pedro"]
-print("Lista antes de ordenar:", nombres)
-insercion_cadenas(nombres)
-print("Lista después de ordenar:", nombres)
+tuplas = [("Carlos", 25), ("Ana", 30), ("Luis", 22), ("Marta", 27), ("Pedro", 19)]
+print("Lista original:", tuplas)
+tuplas_ordenadas = insertion_sort(tuplas)
+print("Lista ordenada por el segundo valor:", tuplas_ordenadas)
 
 
